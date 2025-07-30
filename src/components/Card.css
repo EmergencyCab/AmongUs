@@ -1,0 +1,155 @@
+/* CARD COMPONENT STYLING */
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  height: 450px;
+  padding: 2rem;
+  box-sizing: border-box;
+  
+  background: linear-gradient(145deg, #3a3a3a, #2c2c2c);
+  border: 3px solid #555;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.Card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+.Card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.Card:hover::before {
+  opacity: 1;
+}
+
+/* Color-specific borders */
+.Card.color-red {
+  border-color: #C51111;
+  box-shadow: 0 8px 30px rgba(197, 17, 17, 0.3);
+}
+
+.Card.color-green {
+  border-color: #127A12;
+  box-shadow: 0 8px 30px rgba(18, 122, 18, 0.3);
+}
+
+.Card.color-blue {
+  border-color: #132ED1;
+  box-shadow: 0 8px 30px rgba(19, 46, 209, 0.3);
+}
+
+.Card.color-purple {
+  border-color: #6B2FBC;
+  box-shadow: 0 8px 30px rgba(107, 47, 188, 0.3);
+}
+
+.Card.color-yellow {
+  border-color: #F6F657;
+  box-shadow: 0 8px 30px rgba(246, 246, 87, 0.3);
+}
+
+.Card.color-orange {
+  border-color: #ED7D0E;
+  box-shadow: 0 8px 30px rgba(237, 125, 14, 0.3);
+}
+
+.Card.color-pink {
+  border-color: #EC75A8;
+  box-shadow: 0 8px 30px rgba(236, 117, 168, 0.3);
+}
+
+.Card.color-rainbow {
+  border: 3px solid;
+  border-image: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet) 1;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.crewmate-outline {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.Card:hover .crewmate-outline {
+  transform: scale(1.1);
+}
+
+.Card h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #e0e0e0;
+}
+
+.Card .name {
+  color: #00f6f6;
+  text-shadow: 0 0 5px #00f6f6;
+}
+
+.Card .stat {
+  font-weight: 700;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+}
+
+.edit-button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .Card {
+    width: 250px;
+    height: 400px;
+    padding: 1.5rem;
+  }
+  
+  .crewmate-outline {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .Card h2 {
+    font-size: 0.9rem;
+  }
+}
